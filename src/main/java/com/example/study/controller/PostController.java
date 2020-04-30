@@ -16,5 +16,5 @@ public class PostController {
     public SearchParam postMethod(@RequestBody SearchParam searchParam){
         return searchParam;
     }
-    
+
 }
