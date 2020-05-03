@@ -1,7 +1,9 @@
 package com.example.study.model.entity;
 
+import com.example.study.model.enumclass.OrderType;
 import lombok.*;
 import lombok.experimental.Accessors;
+import org.hibernate.criterion.Order;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -28,10 +30,13 @@ public class OrderGroup {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String status;
-    private String orderType;
+
+    @Enumerated(EnumType.STRING)
+    private OrderType orderType; // 주문형태 - 일괄 / 개별
+
     private String revAddress;
     private String revName;
-    private String paymentType;
+    private String paymentType;  // 카드 / 현금
     private BigDecimal totalPrice;
     private Integer totalQuantity;
     private LocalDateTime orderAt;
