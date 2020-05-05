@@ -1,35 +1,31 @@
 package com.example.study.model.network.response;
 
-import com.example.study.model.enumclass.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class UserApiResponse {
-
+public class PartnerApiResponse {
     private Long id;
 
-    private String account;
+    private String name;
 
-    private String password;
+    private String status;
 
-    private UserStatus status;
-
-    private String email;
-
-    private String phoneNumber;
-
+    private String address;
+    private String callCenter;
+    private String partnerNumber;
+    private String businessNumber;
+    private String ceoName;
     private LocalDateTime registeredAt;
-
     private LocalDateTime unregisteredAt;
 
-    private List<OrderGroupApiResponse> orderGroupApiResponseList;
+    private Long cartegoryId;
+
 }
